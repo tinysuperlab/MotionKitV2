@@ -1,0 +1,15 @@
+{
+    "maqueen": "",
+    "maqueen.ultrasonic": "读取超声波传感器",
+    "maqueen.servoRun": "控制舵机旋转一定角度",
+    "maqueen.motorRun": "设置电机运行的方向与速度",
+    "maqueen.motorStop": "停止电机运行",
+    "maqueen.writeLED": "打开/关闭 LED灯",
+    "maqueen.setColor": "RGB灯显示颜色",
+    "maqueen.setRgb": "设置RGB灯的三种原色",
+    "maqueen.readPatrol": "获取巡线传感器状态",
+    "maqueen.getVersion": "获取Maqueen版本号",
+    "maqueen.irRead": "获取红外传感器的值",
+    "maqueen.irEvent": "红外传感器事件回调函数"
+    
+}

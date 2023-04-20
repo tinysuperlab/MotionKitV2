@@ -1,0 +1,27 @@
+{
+    "name": "maqueen",
+    "description": "",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "_locales/zh-cn/maqueen-strings.json",
+        "_locales/zh-cn/maqueen-jsdoc-strings.json",
+        "README.md",
+        "maqueen.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "4.0.29",
+        "targetId": "calliopemini"
+    },
+    "supportedTargets": [
+        "calliopemini"
+    ],
+    "preferredEditor": "tsprj"
+}

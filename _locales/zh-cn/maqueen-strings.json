@@ -1,0 +1,28 @@
+{
+    "maqueen.Motors.M1|block": "左侧",
+    "maqueen.Motors.M2|block": "右侧",
+    "maqueen.Motors.All|block": "全部",
+    "maqueen.Dir.CW|block": "正转",
+    "maqueen.Dir.CCW|block": "反转",
+    "maqueen.Led.LedLeft|block": "左侧",
+    "maqueen.Led.LedRight|block": "右侧",
+    "maqueen.Led.LedAll|block": "全部",
+    "maqueen.LedSwitch.LedOn|block": "打开",
+    "maqueen.LedSwitch.LedOff|block": "关闭",
+    "maqueen.Patrol.PatrolLeft|block": "左侧",
+    "maqueen.Patrol.PatrolRight|block": "右侧",
+
+    "maqueen.ultrasonic|block": "超声波距离|%unit",
+    "maqueen.servoRun|block": "舵机|%index|角度|%angle",
+    "maqueen.motorRun|block": "电机|%index|方向|%Dir|速度|%speed",
+    "maqueen.motorStop|block": "电机停止 |%motors",
+    "maqueen.writeLED|block": "LED灯|%led|%ledswitch",
+    "maqueen.setColor|block": "RGB灯 颜色|%color",
+    "maqueen.setRgb|block": "红|%red 绿|%green 蓝|%blue",
+    "maqueen.readPatrol|block":"巡线传感器|%patrol",
+    "maqueen.getVersion|block": "获取产品信息",
+    "maqueen.irRead|block": "红外的值",
+    "maqueen.irEvent|block": "当接收到红外时运行",
+    "maqueen|block": "Maqueen"
+
+}
