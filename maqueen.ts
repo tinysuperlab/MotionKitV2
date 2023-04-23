@@ -247,7 +247,8 @@ namespace maqueen {
     //% weight=55
     //% blockId=maqueen_irRead block="read IR key value"
     export function irRead(): number {
-        let data = readData(0x2B, 1)[0];
+        let buf = readData(0x2B, 4);
+        let data = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
         return data;
     }
 
@@ -275,7 +276,8 @@ namespace maqueen {
 
     basic.forever(() => {
         if (irFlag == 1) {
-            let data = readData(0x2B, 1)[0];
+            let buf = readData(0x2B, 4);
+            let data = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
             if (data != 0){
                 irCallback(data);
             }
@@ -289,6 +291,6 @@ namespace maqueen {
                 case 0x14: if (!(data & 0x02)) { ltCallback(); break }
             }
         }
-        basic.pause(50);
+        basic.pause(100);
     })
 }
