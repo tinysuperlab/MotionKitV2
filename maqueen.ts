@@ -249,7 +249,7 @@ namespace maqueen {
     export function irRead(): number {
         let buf = readData(0x2B, 4);
         let data = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
-        return data;
+        return irKeyValueConversion(data);
     }
 
     /**
@@ -274,12 +274,42 @@ namespace maqueen {
         pins.i2cWriteBuffer(IICADRRESS, pins.createBufferFromArray(buf));
     }
 
+    function irKeyValueConversion(data: number): number {
+        let data1 = 0;
+        switch (data) {
+            case 0xFD00FF: data1 = 0; break;
+            case 0xFD807F: data1 = 1; break;
+            case 0xFD40BF: data1 = 2; break;
+            case 0xFD20DF: data1 = 4; break;
+            case 0xFDA05F: data1 = 5; break;
+            case 0xFD609F: data1 = 6; break;
+            case 0xFD10EF: data1 = 8; break;
+            case 0xFD906F: data1 = 9; break;
+            case 0xFD50AF: data1 = 10; break;
+            case 0xFD30CF: data1 = 12; break;
+            case 0xFDB04F: data1 = 13; break;
+            case 0xFD708F: data1 = 14; break;
+            case 0xFD08F7: data1 = 16; break;
+            case 0xFD8877: data1 = 17; break;
+            case 0xFD48B7: data1 = 18; break;
+            case 0xFD28D7: data1 = 20; break;
+            case 0xFDA857: data1 = 21; break;
+            case 0xFD6897: data1 = 22; break;
+            case 0xFD18E7: data1 = 24; break;
+            case 0xFD9867: data1 = 25; break;
+            case 0xFD58A7: data1 = 26; break;
+            case 0: data1 = -1; break;
+            default: data1 = data & 0xff; break;
+        }
+        return data1;
+    }
+
     basic.forever(() => {
         if (irFlag == 1) {
             let buf = readData(0x2B, 4);
             let data = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
             if (data != 0){
-                irCallback(data);
+                irCallback(irKeyValueConversion(data));
             }
         }
         if (ltFlag == 1) {
