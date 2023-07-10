@@ -1,7 +1,7 @@
 
 
 
-//% weight=100 color=#9999FF icon="\uf136" block=Maqueen
+//% weight=100 color=#9999FF icon="\uf136" block="Motion Kit"
 namespace maqueen {
 
     export enum DistanceUnit {
@@ -204,6 +204,7 @@ namespace maqueen {
 
     //% weight=65
     //% blockId=maqueen_getVersion block="get product information"
+    //% deprecated=true
     export function getVersion(): string {
         let dataLen = readData(0x32, 1)[0];
         let buf = readData(0x33, dataLen);

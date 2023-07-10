@@ -23,6 +23,6 @@
     "maqueen.getVersion|block": "获取产品信息",
     "maqueen.irRead|block": "红外的值",
     "maqueen.irEvent|block": "当接收到红外时运行",
-    "maqueen|block": "Maqueen"
+    "maqueen|block": "Motion Kit"
 
 }
