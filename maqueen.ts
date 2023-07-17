@@ -81,7 +81,8 @@ namespace maqueen {
     //% blockId=maqueen_ultrasonic block="read ultrasonic sensor |%unit "
     export function ultrasonic(unit: DistanceUnit, maxCmDistance = 500): number {
         let integer = readData(0x28, 2);
-        return integer[0] << 8 | integer[1];
+        let distance = integer[0] << 8 | integer[1];
+        return (distance > 399 || distance < 1) ? -1 : distance;
     }
 
     /**
