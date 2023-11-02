@@ -1,5 +1,5 @@
 {
-    "name": "dfrobot-motion-kit",
+    "name": "motion-kit",
     "version": "0.0.6",
     "description": "",
     "license": "MIT",
@@ -9,8 +9,8 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "_locales/zh-cn/dfrobot-motion-kit-strings.json",
-        "_locales/zh-cn/dfrobot-motion-kit-jsdoc-strings.json",
+        "_locales/zh-cn/motion-kit-strings.json",
+        "_locales/zh-cn/motion-kit-jsdoc-strings.json",
         "README.md",
         "maqueen.ts"
     ],
