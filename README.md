@@ -1,5 +1,5 @@
 
-# Maqueen
+# MotionKit V2 Erweiterung
 
 
 ## Basic usage
@@ -13,6 +13,7 @@ Copyright (c) 2020, microbit/micropython Chinese community
 
 ## Supported targets
 
+* for PXT/calliope
 * for PXT/microbit
 
 
