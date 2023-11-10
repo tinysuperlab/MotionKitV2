@@ -1,7 +1,7 @@
 
 
 
-//% weight=100 color=#6476fd icon="\uf6e2" block="Motion Kit"
+//% weight=100 color=#6476fd icon="\uf136" block="Motion Kit"
 namespace maqueen {
 
     export enum DistanceUnit {
@@ -35,7 +35,7 @@ namespace maqueen {
     export enum Led {
         //% blockId="maqueen_LedLeft" block="links"
         LedLeft = 0,
-        //% blockId="maqueen_LedRight" block="techts"
+        //% blockId="maqueen_LedRight" block="rechts"
         LedRight = 1,
         //% blockId="maqueen_LedAll" block="beide"
         LedAll = 2
