@@ -17,41 +17,41 @@ namespace maqueen {
     }
 
     export enum Motors {
-        //% blockId="maqueen_MotorLeft" block="left"
+        //% blockId="maqueen_MotorLeft" block="links"
         M1 = 0,
-        //% blockId="maqueen_MotorRight" block="right"
+        //% blockId="maqueen_MotorRight" block="rechts"
         M2 = 1,
-        //% blockId="maqueen_MotorAll" block="all"
+        //% blockId="maqueen_MotorAll" block="beide"
         All = 2
     }
 
     export enum Dir {
-        //% blockId="maqueen_DirCW" block="Forward"
+        //% blockId="maqueen_DirCW" block="vorwärts"
         CW = 0,
-        //% blockId="maqueen_DirCCW" block="Backward"
+        //% blockId="maqueen_DirCCW" block="rückwärts"
         CCW = 1
     }
 
     export enum Led {
-        //% blockId="maqueen_LedLeft" block="left"
+        //% blockId="maqueen_LedLeft" block="links"
         LedLeft = 0,
-        //% blockId="maqueen_LedRight" block="right"
+        //% blockId="maqueen_LedRight" block="techts"
         LedRight = 1,
-        //% blockId="maqueen_LedAll" block="all"
+        //% blockId="maqueen_LedAll" block="beide"
         LedAll = 2
     }
 
     export enum LedSwitch {
-        //% blockId="maqueen_LedOn" block="ON"
+        //% blockId="maqueen_LedOn" block="AN"
         LedOn = 1,
-        //% blockId="maqueen_LedOff" block="OFF"
+        //% blockId="maqueen_LedOff" block="AUS"
         LedOff = 0
     }
 
     export enum Patrol {
-        //% blockId="maqueen_PatrolLeft" block="left"
+        //% blockId="maqueen_PatrolLeft" block="links"
         PatrolLeft = 0,
-        //% blockId="maqueen_PatrolRight" block="right"
+        //% blockId="maqueen_PatrolRight" block="rechts"
         PatrolRight = 1
     }
 
@@ -78,7 +78,7 @@ namespace maqueen {
      */
 
     //% weight=95
-    //% blockId=maqueen_ultrasonic block="read ultrasonic sensor |%unit "
+    //% blockId=maqueen_ultrasonic block="Ultraschallsensor |%unit "
     export function ultrasonic(unit: DistanceUnit, maxCmDistance = 500): number {
         let integer = readData(0x28, 2);
         let distance = integer[0] << 8 | integer[1];
@@ -90,7 +90,7 @@ namespace maqueen {
      */
 
     //% weight=90
-    //% blockId=maqueen_servoRun block="servo|%index|angle|%angle"
+    //% blockId=maqueen_servoRun block="Servo|%index|Winkel|%angle"
     //% angle.shadow="protractorPicker"
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     export function servoRun(index: Servos, angle: number): void {
@@ -109,7 +109,7 @@ namespace maqueen {
      */
 
     //% weight=85
-    //% blockId=maqueen_motorRun block="motor|%index|move|%direction|at speed|%speed"
+    //% blockId=maqueen_motorRun block="Motor|%index|Richtung|%direction|Tempo|%speed"
     //% speed.min=0 speed.max=255 speed.defl=200
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
@@ -129,7 +129,7 @@ namespace maqueen {
      */
 
     //% weight=80
-    //% blockId=maqueen_motorStop block="motor |%motors stop"
+    //% blockId=maqueen_motorStop block="Motor |%motors stop"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorStop(index: Motors): void {
         if (index == Motors.M1) {
@@ -147,7 +147,7 @@ namespace maqueen {
      */
 
     //% weight=75
-    //% blockId=maqueen_writeLED block="LEDlight |%led turn |%ledswitch"
+    //% blockId=maqueen_writeLED block="LED |%led turn |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
     export function writeLED(led: Led, ledswitch: LedSwitch): void {
@@ -162,7 +162,7 @@ namespace maqueen {
     }
 
     //% weight=74
-    //% blockId=maqueen_setColor block="RGBlight |%color"
+    //% blockId=maqueen_setColor block="RGB-LED |%color"
     //% color.shadow="colorNumberPicker"
     export function setColor(color: number): void {
         writeData([0x18, (color >> 16) & 0xff ]);
@@ -171,7 +171,7 @@ namespace maqueen {
     }
 
     //% weight=73
-    //% blockId=maqueen_setRgb block="red |%red green |%green blue |%blue"
+    //% blockId=maqueen_setRgb block="rot |%red grün |%green blau |%blue"
     //% red.min=0 red.max=255 red.defl=200
     //% green.min=0 green.max=255 green.defl=200
     //% blue.min=0 blue.max=255 blue.defl=200
@@ -185,7 +185,7 @@ namespace maqueen {
      */
 
     //% weight=70
-    //% blockId=maqueen_readPatrol block="the status of |%patrol line tracking sensor"
+    //% blockId=maqueen_readPatrol block="Status |%patrol Linienfolger"
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
         let data = readData(0x1D, 1)[0];
@@ -203,7 +203,7 @@ namespace maqueen {
      */
 
     //% weight=65
-    //% blockId=maqueen_getVersion block="get product information"
+    //% blockId=maqueen_getVersion block="Versionsnummer"
     //% deprecated=true
     export function getVersion(): string {
         let dataLen = readData(0x32, 1)[0];
@@ -220,7 +220,7 @@ namespace maqueen {
      */
 
     //% weight=60
-    //% blockId=maqueen_ltEvent block="on|%value line tracking sensor|%vi"
+    //% blockId=maqueen_ltEvent block="an|%value Linienfolger|%vi"
     //% advanced=true
     //% deprecated=true
     export function ltEvent(value: Patrol, vi: Voltage, ltcb: Action) {
@@ -246,7 +246,7 @@ namespace maqueen {
      */
 
     //% weight=55
-    //% blockId=maqueen_irRead block="read IR key value"
+    //% blockId=maqueen_irRead block="IR Wert"
     export function irRead(): number {
         let buf = readData(0x2B, 4);
         let data = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
@@ -258,7 +258,7 @@ namespace maqueen {
      */
 
     //% weight=50
-    //% blockId=maqueen_irEvent block="on IR received"
+    //% blockId=maqueen_irEvent block="Wenn IR empfangen"
     //% draggableParameters
     //% advanced=true
     export function irEvent(ircb: (message: number) => void) {
