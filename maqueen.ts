@@ -129,7 +129,7 @@ namespace maqueen {
      */
 
     //% weight=80
-    //% blockId=maqueen_motorStop block="Motor |%motors stop"
+    //% blockId=maqueen_motorStop block="Motor |%motors anhalten"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorStop(index: Motors): void {
         if (index == Motors.M1) {
@@ -147,7 +147,7 @@ namespace maqueen {
      */
 
     //% weight=75
-    //% blockId=maqueen_writeLED block="LED |%led turn |%ledswitch"
+    //% blockId=maqueen_writeLED block="LED |%led |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
     export function writeLED(led: Led, ledswitch: LedSwitch): void {
@@ -185,7 +185,7 @@ namespace maqueen {
      */
 
     //% weight=70
-    //% blockId=maqueen_readPatrol block="Status |%patrol Linienfolger"
+    //% blockId=maqueen_readPatrol block="Linienfolger|%patrol Status"
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
         let data = readData(0x1D, 1)[0];
