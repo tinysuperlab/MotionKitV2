@@ -1,7 +1,7 @@
 
 
 
-//% weight=100 color=#6476fd icon="\f75b" block="Motion Kit"
+//% weight=100 color=#6476fd icon="\f0e7" block="Motion Kit"
 namespace maqueen {
 
     export enum DistanceUnit {
