@@ -11,6 +11,8 @@
         "main.ts",
         "_locales/zh-cn/motion-kit-strings.json",
         "_locales/zh-cn/motion-kit-jsdoc-strings.json",
+        "_locales/de-de/motion-kit-strings.json",
+        "_locales/de-de/motion-kit-jsdoc-strings.json",
         "README.md",
         "maqueen.ts"
     ],

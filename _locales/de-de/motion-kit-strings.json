@@ -1,0 +1,28 @@
+{
+    "maqueen.Motors.M1|block": "links",
+    "maqueen.Motors.M2|block": "rechts",
+    "maqueen.Motors.All|block": "beide",
+    "maqueen.Dir.CW|block": "vorwärts",
+    "maqueen.Dir.CCW|block": "rückwärts",
+    "maqueen.Led.LedLeft|block": "links",
+    "maqueen.Led.LedRight|block": "rechts",
+    "maqueen.Led.LedAll|block": "beide",
+    "maqueen.LedSwitch.LedOn|block": "an",
+    "maqueen.LedSwitch.LedOff|block": "aus",
+    "maqueen.Patrol.PatrolLeft|block": "links",
+    "maqueen.Patrol.PatrolRight|block": "rechts",
+
+    "maqueen.ultrasonic|block": "cm|%unit",
+    "maqueen.servoRun|block": "Servo|%index|Winkel|%angle",
+    "maqueen.motorRun|block": "Motor|%index|Richtung|%Dir|Tempo|%speed",
+    "maqueen.motorStop|block": "anhalten |%motors",
+    "maqueen.writeLED|block": "LED|%led|%ledswitch",
+    "maqueen.setColor|block": "RGB-LED|%color",
+    "maqueen.setRgb|block": "rot|%red grün|%green blau|%blue",
+    "maqueen.readPatrol|block":"Linienfolger|%patrol",
+    "maqueen.getVersion|block": "Versionsnummer",
+    "maqueen.irRead|block": "IR Wert",
+    "maqueen.irEvent|block": "Wenn IR empfangen",
+    "maqueen|block": "Motion Kit"
+
+}

@@ -1,0 +1,15 @@
+{
+    "maqueen": "",
+    "maqueen.ultrasonic": "Ultraschallsensor",
+    "maqueen.servoRun": "Einstellung des Winkels des Servomotors",
+    "maqueen.motorRun": "Einstellung der Richtung und Geschwindigkeit des Motors",
+    "maqueen.motorStop": "Motor(en) anhalten",
+    "maqueen.writeLED": "LED an-/ausschalten",
+    "maqueen.setColor": "Farbe der RGB-LED",
+    "maqueen.setRgb": "Einstellung der drei Grundfarben der RGB-LED",
+    "maqueen.readPatrol": "Status des Lininefolgers abfragen",
+    "maqueen.getVersion": "Versionsnummer",
+    "maqueen.irRead": "Wert des Infrarotsensors ermitteln",
+    "maqueen.irEvent": "Infrarotsensor-Funktion"
+    
+}
