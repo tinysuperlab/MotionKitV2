@@ -23,6 +23,6 @@
     "maqueen.getVersion|block": "Versionsnummer",
     "maqueen.irRead|block": "IR Wert",
     "maqueen.irEvent|block": "Wenn IR empfangen",
-    "maqueen|block": "Motion Kit"
+    "maqueen|block": "MotionKit"
 
 }
