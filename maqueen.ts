@@ -195,7 +195,7 @@ namespace maqueen {
      */
 
     //% weight=70
-    //% blockId=maqueen_readPatrol block="Liniensensor|%patrol|%"
+    //% blockId=maqueen_readPatrol block="Liniensensor %patrol %brightness"
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     //% brightness.fieldEditor="gridpicker" brightness.fieldOptions.columns=2
     export function readPatrol(patrol: Patrol, brightness: Brightness): boolean {
