@@ -61,7 +61,13 @@ namespace maqueen {
         //% blockId="maqueen_Low"block="low"
         Low = 0
     }
-
+    
+    export enum Brightness {
+        //% blockId="maqueen_Bright" block="hell"
+        Bright = 0,
+        //% blockId="maqueen_Dark" block="dunkel"
+        Dark = 1
+    }
     
     const IICADRRESS = 0x10;
 
@@ -82,7 +88,11 @@ namespace maqueen {
     export function ultrasonic(unit: DistanceUnit, maxCmDistance = 500): number {
         let integer = readData(0x28, 2);
         let distance = integer[0] << 8 | integer[1];
-        return (distance > 399 || distance < 1) ? -1 : distance;
+        let nothingVariable;
+        if (distance > 399 || distance < 1) {
+            return nothingVariable; // Returns ? if distance is invalid
+        }
+        return distance;
     }
 
     /**
@@ -185,17 +195,20 @@ namespace maqueen {
      */
 
     //% weight=70
-    //% blockId=maqueen_readPatrol block="Linienfolger|%patrol Status"
+    //% blockId=maqueen_readPatrol block="Liniensensor %patrol %brightness"
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
-    export function readPatrol(patrol: Patrol): number {
+    //% brightness.fieldEditor="gridpicker" brightness.fieldOptions.columns=2
+    export function readPatrol(patrol: Patrol, brightness: Brightness): boolean {
         let data = readData(0x1D, 1)[0];
+        let sensorValue = 0;
+        
         if (patrol == Patrol.PatrolLeft) {
-            return (data & 0x01) === 0 ? 0 : 1;
+            sensorValue = (data & 0x01) === 0 ? 0 : 1;
         } else if (patrol == Patrol.PatrolRight) {
-            return (data & 0x02) === 0 ? 0 : 1;
-        } else {
-            return data;
+            sensorValue = (data & 0x02) === 0 ? 0 : 1;
         }
+        
+        return brightness == Brightness.Bright ? sensorValue == 0 : sensorValue == 1;
     }
 
     /**
