@@ -88,12 +88,11 @@ namespace maqueen {
     export function ultrasonic(unit: DistanceUnit, maxCmDistance = 500): number {
         let integer = readData(0x28, 2);
         let distance = integer[0] << 8 | integer[1];
-        let nothingVariable;
         if (distance > 399) {
             return 400; // Return maximum value
         }
         if (distance < 1) {
-            return nothingVariable; // Returns ? if distance is invalid
+            return -1; // Returns -1 if distance is invalid
         }
         return distance;
     }
